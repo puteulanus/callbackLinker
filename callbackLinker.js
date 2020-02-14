@@ -10,7 +10,7 @@ class Events {
         this.linker = linker;
     }
 
-    register = (eventName) => {
+    register(eventName) {
         this[eventName] = function () {
             if (typeof(this.linker[eventName]) !== 'function') return;
             this.linker[eventName](...arguments);
